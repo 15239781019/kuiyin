@@ -1,0 +1,18 @@
+{
+	"yanse":[{
+		"color":{
+			"color1":"粉色",
+			"color2":"浅灰",
+			"color3":"蓝色",
+			"color4":"浅卡其"
+		},
+		"size":{
+			"size1":"L",
+			"size2":"XL",
+			"size3":"XXL",
+			"size4":"XXXL",
+			"size5":"XXXXL"
+		}
+	
+	}]
+}

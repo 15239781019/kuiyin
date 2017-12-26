@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>逗童酷裤仔</title>
+		<link rel="stylesheet" type="text/css" href="css/liebiao.css"/>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/liebiao.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/template.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="right-nav">
+			<div class="right1">
+				<div><em></em></div>
+				
+			</div>
+			<div class="reight1-1">
+				<span></span>
+				<em></em>
+				<div class="user"><img src="img/userimg.jpg" alt="" /></div>				
+				<p>您好，母婴之家用户，请<a href="denglu.html" target="_blank">登录</a>   |  <a href="zhuce.html" target="_blank">注册</a></p>
+			</div>
+			<div class="right2">
+				<em></em>
+				<p>购物车</p>
+				<b class="nb">(0)</b>
+			</div>
+			<!--<div class="right2-1">
+				<i></i>				
+				<p><span>购物车</span><em></em></p>
+				<img src="img/cartdefault.jpg"/>
+				<strong>您的购物车还是空的快去挑选喜欢的商品吧~</strong>
+				<div class="b"><b>您可能会喜欢</b></div>
+			</div>-->
+			<div class="right3">
+				<em></em>
+			</div>
+			<div class="right4"><em></em></div>
+			<div class="reight4-1">
+				<span></span>
+				<em></em>
+				<div class="user"><img src="img/userimg.jpg" alt="" /></div>				
+				<p>您好，母婴之家用户，请<a href="denglu.html" target="_blank">登录</a>   |  <a href="zhuce.html" target="_blank">注册</a></p>
+			</div>
+			<div class="right5">
+				<em></em>
+				<span>在线客服</span>
+			</div>
+			<div class="right5-1"><em></em><span>在线客服</span></div>
+			<div class="right6"><em></em></div>
+			<div class="right6-1"><em></em><span>回到顶部</span></div>
+		</div>
+		
+		
+		<div id="top">
+			<ul class="top-nav1">
+				<li><a href="">母婴之家</a></li>
+				<li><a href="">母婴海淘</a></li>
+				<li>
+					<span></span>
+					<a href="">手机版</a>
+					<img src="img/app.jpg"/>
+				</li>
+			</ul>
+			<ul class="top-nav2">
+				<li>
+					<span>欢迎来到母婴之家!</span>
+					<a href="denglu.html" target="_blank">[登录]</a>
+					<a href="zhuce.html" target="_blank">[免费注册]</a>
+				</li>
+				<li class="ding">
+					<a href="">我的订单<span></span></a>
+					<ul class="dingli">
+						<li><a href="">我的家</a></li>
+						<li><a href="">我的提问</a></li>
+						<li><a href="">我的评论</a></li>
+						<li><a href="">我的收藏</a></li>
+						<li><a href="">我的幸运星</a></li>
+					</ul>
+				</li>
+				<li class="ke">
+					<a href="">客户服务<span></span></a>
+					<ul class="keli">
+						<li><a href="">在线客服</a></li>
+						<li><a href="">帮助中心</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="">商务合作</a></li>
+				<li><a href="">分类导航</a></li>
+			</ul>
+		</div>
+		
+		<div id="header">
+			<a href=""><img src="img/logo29new.png"/></a>
+			<div class="guo1"><img src="img/ger.jpg"/></div>
+			<div class="guo2"><img src="img/index_09.jpg"/></div>
+			<div class="guo3"><img src="img/index_08.jpg"/></div>
+		</div>
+		<div id="nav">
+			<div class="nav-top">
+				<span>首页</span>
+				<div class="buy"><em></em><i>我的购物车</i></div>
+				<div class="buy1"><i>去结算</i><em></em></div>
+			</div>
+			<div class="nav-bottom">
+				<ul>
+					<li>服装鞋帽</li>
+					<li>玩具书籍</li>
+					<li>妈妈专区</li>
+					<li>婴儿用品</li>
+				</ul>
+				<div class="cai"><span>精彩预告</span></div>
+			</div>
+		</div>
+		<div id="banner"></div>
+		
+		<div id="main">
+			<div class="main-top">
+				<h3>逗童酷裤仔童装专场</h3>
+				<div class="d1">
+					<input type="checkbox" name="" id="" value="" />
+					<span>有货</span>
+				</div>
+				<div class="d2"><span>综合</span></div>
+				<div class="d3"><span>价格</span><em></em></div>
+				<div class="d4"><span>折扣</span><em></em></div>
+			</div>
+			<div class="main-bottom">
+				<script id="test3" type="text/html">
+					{{each list as value}}
+						<div class="list">
+							<a href="xiangqing.html?id={{value["id"]}}"><img src="{{value["imgsrc"]}}" alt="" /></a>
+							<i><h5>{{value["title"]}}</h5></i>
+							<p><em>￥</em><span>{{value["price"]}}</span></p>
+							<b>{{value["dis"]}}</b>
+							<input type="button" name="" data-id="{{value["id"]}}" value="加入购物车" class="btn"/>
+						</div>
+					{{/each}}	
+				</script>
+				<script type="text/javascript">
+					$(function(){
+						$.ajax({
+						type:"get",
+						url:"json/list.json",
+						async:true,
+						success:function(data3){
+							list(data3)
+						}
+					});
+				function list(data3){					
+					var html3 = template("test3",data3);
+					//console.log(html);
+					$(".main-bottom")[0].innerHTML = html3;
+					
+					var oNum =document.getElementsByClassName("nb")[0];
+					console.log(oNum)
+					if(getCookie("cart")){
+						//cookie取值取的是字符串，字符串转对象的方法是JSON.parse()
+						var obj = JSON.parse(getCookie("cart"));
+					}else{
+						var obj = {};
+					}
+					
+					var sum = 0;
+					for(var i in obj){
+						sum += obj[i];
+					};
+					
+					oNum.innerHTML = sum;
+					
+					var aBtn = document.getElementsByClassName("btn")
+					console.log(aBtn)
+					for(var i = 0 ;i<aBtn.length;i++){
+						aBtn[i].onclick=function(){
+							var id = this.getAttribute("data-id");
+							if(!obj[id]){
+								obj[id] = 1;
+							}else{
+								obj[id]++;																
+							}
+							sum++;
+							oNum.innerHTML = sum;
+							var str = JSON.stringify(obj);
+							setCookie("cart",str,7);
+						}
+					}
+				}
+			})
+					
+					
+				</script>
+				<div class="alist">
+					<img src="img/syzc.png"/>
+				</div>
+			</div>
+		</div>
+		<div id="bottom">
+			<ul>
+				<li><a href="">首页</a></li>
+				<li><a href="">公司简介</a></li>
+				<li><a href="">我的品牌专区</a></li>
+				<li><a href="">商家中心</a></li>
+				<li><a href="">关于我们</a></li>
+				<li><a href="">人才招聘</a></li>
+				<li><a href="">联系我们</a></li>
+				<li><a href="">帮助中心</a></li>
+				<li><a href="">手机客户端</a></li>
+				<li><a href="">客服在线</a></li>
+				<li><a href="">品牌专区售后政策</a></li>
+			</ul>
+		</div>
+		<div id="footer">
+			<p>Copyright©2003 - 2016 muyingzhijia.com All Rights Reserved沪ICP备09021709号</p>
+			<span><img src="img/jing.gif"/></span>
+			<em><img src="img/brand_bottom_large.jpg"/></em>
+		</div>
+	</body>
+</html>

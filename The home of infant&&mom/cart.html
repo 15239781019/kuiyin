@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>母婴之家购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/template.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<div id="top">
+			<ul class="top-nav1">
+				<li><a href="">母婴之家</a></li>
+				<li><a href="">母婴海淘</a></li>
+				<li>
+					<span></span>
+					<a href="">手机版</a>
+					<img src="img/app.jpg"/>
+				</li>
+			</ul>
+			<ul class="top-nav2">
+				<li>
+					<span>欢迎来到母婴之家!</span>
+					<a href="">[登录]</a>
+					<a href="">[免费注册]</a>
+				</li>
+				<li class="ding">
+					<a href="">我的订单<span></span></a>
+					<ul class="dingli">
+						<li><a href="">我的家</a></li>
+						<li><a href="">我的提问</a></li>
+						<li><a href="">我的评论</a></li>
+						<li><a href="">我的收藏</a></li>
+						<li><a href="">我的幸运星</a></li>
+					</ul>
+				</li>
+				<li class="ke">
+					<a href="">客户服务<span></span></a>
+					<ul class="keli">
+						<li><a href="">在线客服</a></li>
+						<li><a href="">帮助中心</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="">商务合作</a></li>
+				<li><a href="">分类导航</a></li>
+			</ul>
+		</div>
+		<div id="header">
+			<a href=""><img src="img/logo29new.png"/></a>
+			<div class="guo1"><img src="img/cart-step1.png"/></div>
+			
+		</div>
+		<div id="main">
+			<h3><em></em>我的购物车</h3>
+			<ul id="cart">
+			
+			</ul>
+			<p class="danjia">单价</p>
+			<p class="shuliang">数量</p>
+			<p class="caozuo">操作</p>			
+		</div>
+		<div id="total">
+			<em></em>
+			<p class="zongjia">总价</p>
+			<div class="jiesuan">去结算</div>
+		</div>				
+						
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					type:"get",
+					url:"json/xinxi.json",
+					async:true,
+					success:function(data){
+						cart(data);
+					}
+				});
+				
+				function cart(data){
+					function getCookie(name){
+							var str = document.cookie;
+							//console.log(str)
+							var arr =str.split(";");
+							//console.log(arr)
+							for(var i = 0 ;i<arr.length;i++){
+								var arr1 = arr[i].split("=");
+								console.log(arr1)
+									if(arr1[0]==name){
+										return arr1[1]
+									}
+								}
+							}
+					
+					function setCookie(name,value,n){
+						var oDate = new Date();
+						oDate.setDate(oDate.getDate()+n);
+						document.cookie=name+"="+value+";expires="+oDate;
+					}
+					if(getCookie("cart")){
+						var obj = JSON.parse(getCookie("cart"));
+						}else{
+							var obj = {};
+					}
+						if(getCookie("cart")){
+							var obj = JSON.parse(getCookie("cart"));
+						}else{
+							var obj = {};
+						}
+						var html ="";
+						for(var i in obj){
+						html+='<li data-id="'+i+'"><img src="'+data[i].imgsrc+'"><span class="title">'+data[i].title+'</span><span class="price">'+data[i].price+'</span><span><em class="minus">-</em><input type="text" class="num" value="'+obj[i]+'"><em class="add">+</em></span><span class="del">删除</span></li>';
+			}						
+			$("#cart")[0].innerHTML =html;
+			var oCart = document.getElementById("cart");
+			var oTotal = document.getElementById("total");
+			var oEm = oTotal.children[0];
+			var aJian = document.getElementsByClassName("minus");
+			var aJia = document.getElementsByClassName("add");
+			var aNum = document.getElementsByClassName("num");
+			var aDel=document.getElementsByClassName("del");
+			var aLi =oCart.children;
+			
+			for(var i = 0; i<aJian.length;i++){
+				aJian[i].onclick=function(){
+					var oInput = this.nextElementSibling || this.nextSibling;
+					//console.log(oInput)
+					oInput.value--;
+					var id = this.parentNode.parentNode.getAttribute("data-id")
+					obj[id]=parseInt(oInput.value);
+					jszj();
+					var str = JSON.stringify(obj);
+					setCookie("cart",str,7);
+				}
+				aJia[i].onclick=function(){
+					var oInput = this.previousElementSibling || this.previousSibling;
+					oInput.value++;
+					var id = this.parentNode.parentNode.getAttribute("data-id");
+					obj[id] =parseInt(oInput.value);
+					jszj();
+					var str = JSON.stringify(obj);
+					setCookie("cart",str,7);
+				}
+				
+				aNum[i].onchange=function(){
+					var id = this.parentNode.parentNode.getAttribute("data-id");
+					obj[id]=parseInt(this.value);
+					jszj();
+					var str = JSON.stringify(obj);
+					setCookie("cart",str,7);
+				}
+				aDel[i].onclick=function(){
+					var id = this.parentNode.getAttribute("data-id");
+					oCart.removeChild(this.parentNode);
+					delete obj[id];
+					jszj();
+					var str = JSON.stringify(obj);
+					setCookie("cart",str,7);
+					
+				}
+			}
+			function jszj(){
+				var totalPrice = 0;
+				for(var i in obj){
+					totalPrice += obj[i]*data[i].price;
+				}
+				oEm.innerHTML = totalPrice;
+			}
+			jszj()
+			}
+	
+			})
+		
+		</script>
+		<div id="bottom">
+			<ul>
+				<li><a href="">首页</a></li>
+				<li><a href="">公司简介</a></li>
+				<li><a href="">我的品牌专区</a></li>
+				<li><a href="">商家中心</a></li>
+				<li><a href="">关于我们</a></li>
+				<li><a href="">人才招聘</a></li>
+				<li><a href="">联系我们</a></li>
+				<li><a href="">帮助中心</a></li>
+				<li><a href="">手机客户端</a></li>
+				<li><a href="">客服在线</a></li>
+				<li><a href="">品牌专区售后政策</a></li>
+			</ul>
+		</div>
+		<div id="footer">
+			<p>Copyright©2003 - 2016 muyingzhijia.com All Rights Reserved沪ICP备09021709号</p>
+			<span><img src="img/jing.gif"/></span>
+			<em><img src="img/brand_bottom_large.jpg"/></em>
+		</div>
+	</body>
+</html>

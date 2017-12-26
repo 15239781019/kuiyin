@@ -1,0 +1,421 @@
+@charset "utf-8";
+html,body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend,input,b{margin:0; padding:0;}
+ul,li,ol,dl{list-style:none;}
+img{border:0;}
+img{display:block;}
+a{text-decoration:none;}
+i,em{font-style: normal;}
+b,strong{font-weight:normal;}
+body{font-family:"微软雅黑";}
+input,a{outline:none;}/*清除input自带边框*/  
+
+body{
+    background: #ececec;
+}
+#top{
+    height: 50px;
+    background: #f0eef1;
+    border-bottom: 2px solid #cecece;
+    
+    .top-nav1{
+        margin-left:80px ;
+        li:first-child{
+            border: 1px solid #cecece;
+            border-radius: 2px 2px 0 0;
+            border-bottom: 0;
+            background: #fff;
+    
+        }
+         li:first-child a:first-child{
+            color:#ff6699 ;
+         }
+         li:last-child span{
+             width: 12px;
+             height: 20px;           
+             position: absolute;
+             top: 24px;
+             background: url(../img/spitir.png) -320px  -240px;
+             transition: all .5s;
+         }
+         li:last-child { 
+             text-align: center;
+             
+             img{
+                 display: none;
+             }
+                       
+                 &:hover{
+                     border: 1px solid #ff6699;
+                     border-bottom:0;
+                     
+                     background: #fff;
+                     span{
+                         background: url(../img/spitir.png) -320px -265px;                       
+                     }
+                     img{
+                         display: block;
+                         z-index: 1;
+                         cursor: pointer;
+                         position: absolute;
+                         left: 274px;
+                         border: 1px solid #ff6699;
+                     } 
+                                    
+             }
+             
+         }
+    }
+    .top-nav1 li{
+        float: left;
+        width: 96px;
+        height: 35px;    
+        margin-top:14px ;
+         font-weight:900 ;
+        a{
+            color: #666666;
+            font-size: 14px;
+             margin: 20px;
+            line-height: 35px;
+            &:hover{
+                color: #ff6699;
+            }
+        }
+    }
+    .top-nav2{
+        margin-left: 650px;
+        position: relative;
+        li:first-child a{
+            color: #ff6699;
+            margin: 0px;
+        }
+        
+        li:first-child a:last-child{
+            margin-right: 5px;
+        }
+        .ding{
+            padding-right: 15px;
+            
+            .dingli{
+                position: absolute;
+                width: 79px;
+                z-index: 2;
+                left: 228px;
+                top: 40px;
+                background: #fff;
+                display: none;
+                li{
+                    height: 10px;
+                    border: 0;
+                    text-align: left;
+                    margin: 8px;
+                    a{
+                        color: #000;
+                      margin: 0;
+                    }
+                }
+            }
+             &:hover{
+                 background: #fff;
+                 border: 1px solid #ff6699;
+                 border-bottom: 0;
+                 box-sizing: border-box;
+                 span{
+                    border-width:0 6px 6px;
+                    border-style:solid;
+                    border-color: transparent transparent #ff6699;
+                    position: absolute;
+                    top: 30px;
+                 } 
+                 .dingli{
+                     display: block;
+                     border: 1px solid #ff6699;
+                     border-top: 0;
+                     a{
+                         &:hover{
+                             color: #ff6699;
+                         }
+                     }
+                     
+                 }              
+            }
+        }
+        .ding span{
+            width: 0px;
+            height: 0px;
+            border-width:6px 6px 0;
+            border-style:solid;
+            border-color:#333 transparent transparent;
+            position: absolute;
+            top: 30px;
+           
+        }
+        .ke{
+             padding-right: 10px;
+             .keli{
+                position: absolute;
+                width: 74px;
+                z-index: 2;
+                left: 318px;
+                top: 40px;
+                background: #fff;
+                display: none;
+                li{
+                    height: 10px;
+                    border: 0;
+                    text-align: left;
+                    margin: 8px;
+                    a{
+                        color: #000;
+                      margin: 0;
+                    }
+                }
+            }
+             &:hover{
+                  background: #fff;
+                  border: 1px solid #ff6699;
+                  border-bottom: 0;
+                 span{
+                    border-width:0 6px 6px;
+                    border-style:solid;
+                    border-color: transparent transparent #ff6699;
+                    position: absolute;
+                    top: 30px;
+                 }
+                 .keli{
+                     display: block;
+                     border: 1px solid #ff6699;
+                     border-top: 0;
+                     a{
+                         &:hover{
+                             color: #ff6699;
+                         }
+                     }
+                 }                 
+            }
+        }
+        .ke span{
+            width: 0px;
+            height: 0px;
+            border-width:6px 6px 0;
+            border-style:solid;
+            border-color:#333 transparent transparent;
+            position: absolute;
+            top: 30px;
+        }
+    }
+    .top-nav2 li{
+        float: left;
+        height:22px;
+        border-right: 1px solid #cecece;
+        margin-top: 20px;
+        margin-left: 10px;
+        a{
+            color: #666666;
+            font-size: 12px;
+            margin: 8px;
+            line-height: 24px;
+            &:hover{
+                color: #ff6699;
+            }
+        }
+        span{
+            font-size: 12px;
+            margin-right: 5px;
+            color: #666666;
+        }
+    }
+    .top-nav2 li:last-child{
+        border: 0;
+    }
+}
+#header{
+    height: 89px;
+    position: relative;
+    img{
+        float: left;
+        margin-left: 80px;
+        margin-top: 22px;
+    }
+    .guo1{
+        float: left;
+        margin-left: 240px;
+    }
+     
+}
+#main{
+    width:997px ;
+    min-height: 356px;
+    background: #fff;
+    margin-left: 141px;
+    position: relative;
+    h3{
+        margin-left: 40px;   
+        position: relative;  
+        height: 33px;
+        line-height:33px ;
+        em{
+            width: 33px;
+            height: 30px;
+            position: absolute;
+            background: url(../img/gouwuche.png);
+            left: -40px;
+        }
+    }
+    .shuliang{
+        position: absolute;
+        left: 670px;
+        top: 30px;
+        font-size: 14px;
+    }
+    .danjia{
+        position: absolute;
+        left: 490px;
+        top: 30px;
+        font-size: 14px;
+    }
+    .caozuo{
+        position: absolute;
+        top: 30px;
+        font-size: 14px;
+        left: 880px;
+    }
+   
+   #cart{
+       li{
+           position: relative;
+           border-bottom: 1px solid #cecece;
+           img{
+               width: 100px;
+               height: 100px;
+               margin-left: 30px;
+               display: inline-block;
+               border: 2px solid #FF0000;
+           }
+           .title{
+               font-size: 12px;
+           }
+           .price{
+               position: absolute;
+               font-size: 12px ;
+               color: red;
+                left: 500px;
+                bottom: 2px;
+           }
+           .minus{
+               position: absolute;
+               left: 620px;
+              bottom: 2px;
+               padding: 9px;
+               border: 1px solid #cecece;
+               cursor: pointer;
+           }
+           .add{
+               position: absolute;
+               padding: 8px;
+               left: 720px;
+               bottom: 2px;
+               border: 1px solid #cecece;
+               cursor: pointer;
+           }
+           .num{
+               width: 33px;
+               height: 35px;
+               text-align: center;
+               position: absolute;
+               left: 665px;
+               bottom: 2px;
+           }
+           .del{
+              margin-left: 80px; 
+              position: absolute;
+              left: 800px;
+              cursor: pointer;
+              bottom: 2px;
+              &:hover{
+                  color: red;
+              }
+           }
+       }
+   }
+}
+
+#total{
+    width: 997px;
+    height: 55px;
+    margin-left: 141px;
+    background: #fff;
+    margin-top: 10px;
+    line-height: 55px;
+    position: relative;
+    em{
+        position: absolute;
+        color: #FF5C00;
+       font-size: 20px;  
+       left: 700px;
+    }
+    .zongjia{
+        position: absolute;
+        top: 0px;
+        left: 60px;
+    }
+    .jiesuan{
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        background: #FF0000;
+        left: 797px;
+        top: 3px;
+        text-align: center;
+        color: #fff;
+        line-height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+#bottom{
+    height: 38px;
+    width: 100%;
+    background: #333333;
+    ul{
+        margin-left: 180px;
+        li{
+            float: left;
+            line-height: 38px;
+            margin-right: 10px;
+            a{
+                color: #fff;
+                font-size: 12px;
+                padding-right: 15px;
+                border-right:1px solid #fff ;
+                &:hover{
+                    color: mediumblue;
+                    text-decoration: underline;
+                }
+            }           
+        }
+    }
+}
+#footer{
+    height: 117px;
+    width: 100%;
+    background: #fff;
+    position: relative;
+
+    p{
+        float: left;
+        font-size: 12px;
+        color: #333;
+        margin-left: 416px;
+        margin-top: 13px;
+    }
+    span{
+        position: absolute;
+        top: 35px;
+        left: 522px;
+    }
+    em{
+        position: absolute;
+        top: 35px;
+        left: 626px;
+    }
+}

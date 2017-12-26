@@ -1,0 +1,31 @@
+{
+	"xiangqing":[{
+		"imgsrc":"img/main-left1.jpg",
+		"price":"￥29.90",
+		"dis":"5折包邮"
+	},{
+		"imgsrc":"img/main-left2.jpg",
+		"price":"￥19.90",
+		"dis":"5折包邮"
+	},{
+		"imgsrc":"img/main-left3.jpg",
+		"price":"￥39.90",
+		"dis":"5折包邮"
+	},{
+		"imgsrc":"img/main-left4.jpg",
+		"price":"￥49.90",
+		"dis":"5折包邮"
+	},{
+		"imgsrc":"img/main-left5.jpg",
+		"price":"￥59.90",
+		"dis":"5折包邮"
+	},{
+		"imgsrc":"img/main-left6.jpg",
+		"price":"￥19.90",
+		"dis":"5折包邮"
+	},{
+		"imgsrc":"img/main-left7.jpg",
+		"price":"￥49.90",
+		"dis":"5折包邮"
+	}]
+}
